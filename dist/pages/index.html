@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>One-stop Search</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="section-header">One-stop Search</h1>
+    </header>
+    <nav>
+      <div id="search-bar">
+        <select id="search-group-select"></select>
+        <input id="search-input" type="text" />
+        <button id="search-button">Search</button>
+        <button id="clear-button">Clear</button>
+        <button id="settings-button">Preferences</button>
+      </div>
+
+      <section>
+        <div id="settings-pane" class="display-none">
+          <h2 class="section-header">Engines</h2>
+          <button id="add-engine-button">Add engine</button>
+          <ul id="engine-list"></ul>
+
+          <dialog id="engine-editor">
+            <form>
+              <label style="display: block">ID<input id="engine-id" value="" disabled /></label>
+              <label style="display: block"> Title <input id="engine-title" type="text" /> </label>
+              <label style="display: block">
+                URL (%s is replaced with the query) <input id="engine-url" type="text" />
+              </label>
+              <button class="dialog-buttons" id="engine-editor-ok-button" formmethod="dialog">
+                OK
+              </button>
+              <button class="dialog-buttons" id="engine-editor-cancel-button">Cancel</button>
+              <button class="dialog-buttons" id="engine-editor-delete-button">Delete</button>
+            </form>
+          </dialog>
+
+          <h2>Search Groups</h2>
+          <button id="add-group-button">Add search group</button>
+          <ul id="group-list"></ul>
+
+          <dialog id="group-editor">
+            <form>
+              <label style="display: block">ID<input id="group-id" value="" disabled /></label>
+              <label style="display: block"> Title <input id="group-title" type="text" /> </label>
+              <label style="display: block">
+                Engine 1 <input id="group-engine-1-enabled" type="checkbox" checked disabled />
+                <select id="group-engine-1" class="setting-engine-selector"></select>
+              </label>
+              <label style="display: block">
+                Engine 2 <input id="group-engine-2-enabled" type="checkbox" />
+                <select id="group-engine-2" class="setting-engine-selector"></select>
+              </label>
+              <label style="display: block">
+                Engine 3 <input id="group-engine-3-enabled" type="checkbox" />
+                <select id="group-engine-3" class="setting-engine-selector"></select>
+              </label>
+              <label style="display: block">
+                Engine 4 <input id="group-engine-4-enabled" type="checkbox" />
+                <select id="group-engine-4" class="setting-engine-selector"></select>
+              </label>
+              <button class="dialog-buttons" id="group-editor-ok-button" formmethod="dialog">
+                OK
+              </button>
+              <button class="dialog-buttons" id="group-editor-cancel-button">Cancel</button>
+              <button class="dialog-buttons" id="group-editor-delete-button">Delete</button>
+            </form>
+          </dialog>
+        </div>
+      </section>
+    </nav>
+    <main>
+      <div id="result-pane"></div>
+      <script src="/src/index.js"></script>
+    </main>
+  </body>
+</html>

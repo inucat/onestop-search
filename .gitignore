@@ -1,0 +1,10 @@
+node_modules/
+dist/src
+dist/test
+tsconfig.tsbuildinfo
+_metadata
+
+# Extension package and key
+*.crx
+*.pem
+*.zip
